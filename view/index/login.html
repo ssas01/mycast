@@ -36,6 +36,25 @@
     
     <script src="/public/assets/jquery/jquery.min.js"></script>
     <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
-    
+    <script>
+        //页面登陆，当单击登陆的是否，发送请求
+        $("#itcastLoginForm").submit(function () {
+            //页面中是submit按钮，会调用form的提交。因此阻止form的提交，使用ajax提交。
+            var data=$(this).serialize();
+            $.ajax({
+                //按照参考文献发送请求
+                url:"/api/login",
+                type:"post",
+                data:data,
+                dataType:"json",
+                success:function (data) {
+                    if (data.code==200) {
+                        location.href="/index/index";
+                    }
+                }
+            });
+            return false;
+        });
+    </script>
 </body>
 </html>
