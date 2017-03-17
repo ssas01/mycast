@@ -35,6 +35,7 @@
     </div>
     
     <script src="/public/assets/jquery/jquery.min.js"></script>
+    <script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
     <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
         //页面登陆，当单击登陆的是否，发送请求
@@ -49,7 +50,13 @@
                 dataType:"json",
                 success:function (data) {
                     if (data.code==200) {
+                        //需要的数据都存储在result中，使用JSON.stringfy将json对象化成字符串
+                        var str=JSON.stringify(data.result);
+                        //将字符串存储在cookie中
+                        $.cookie('result', str, { expires: 7, path: '/' });
+
                         location.href="/index/index";
+
                     }
                 }
             });
