@@ -11,6 +11,9 @@
         if (count($arr)==2) {
             $path=$arr[0];
             $filename=$arr[1];
+        }else {
+            //当有路径，但是路径不符合格式，则跳到登录页面。
+            $filename="login";
         }
    }else {
     //地址之后没有参数
