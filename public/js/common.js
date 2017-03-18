@@ -10,4 +10,3 @@
 		//重新定位到login页面
 		location.href="/login";
 	}
-	
