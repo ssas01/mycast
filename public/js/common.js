@@ -16,5 +16,19 @@ define(["jquery","echarts","cookie"],function ($,echarts) {
 	var obj=JSON.parse(str);
 	$(".aside .profile img").attr("src",obj.tc_avatar);
 	$(".aside .profile h4").html(obj.tc_name);
+
+	//退出，除了login都有头部
+	$("#logoutId").on("click",function () {
+		//当点击的时候发送请求
+		$.ajax({
+			url:"/api/logout",
+			type:"POST",
+			success:function (data) {
+				if (data.code==200) {
+					location.href="/index/login";
+				}
+			}
+		});
+	})
 })
 
