@@ -33,6 +33,29 @@ define(["jquery","tempalte","bootstrap"],function ($,template) {
                         }
                     })
                 });
+                //为注销田间事件
+                $("#teacherlistTbody tr").find("a:eq(2)").click(function () {
+                    var tc_id=$(this).closest("td").data("tcid");
+                    var tc_status=$(this).closest("td").data("status");
+                    var that=this;
+                    $.ajax({
+                        url:"/api/teacher/handle",
+                        type:"POST",
+                        data:{
+                            tc_id:tc_id,
+                            tc_status:tc_status
+                        },
+                        dataType:"json",
+                        success:function (data) {
+                            if (data.result.tc_status == 1) {
+                                $(that).html("注销");
+                            }else {
+                                $(that).html("启用");
+                            }
+                            $(that).closest("td").data("status",data.result.tc_status)
+                        }
+                    })
+                });
             }
         }
     });
