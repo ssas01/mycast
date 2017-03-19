@@ -2,7 +2,16 @@ require.config({
     baseUrl:"/public",
     paths:{
         jquery:"assets/jquery/jquery",
+        bootstrap:"assets/bootstrap/js/bootstrap",
         cookie:"assets/jquery-cookie/jquery.cookie",
-        echarts:"assets/echarts/echarts.min"
+        echarts:"assets/echarts/echarts.min",
+        tempalte:"assets/artTemplate/template",
+        nprogress:"assets/nprogress"
+    },
+    //注意垫片问题
+    shim:{
+        bootstrap:{
+            deps:["jquery"]
+        }
     }
 });
