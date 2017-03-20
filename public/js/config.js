@@ -6,7 +6,7 @@ require.config({
         cookie:"assets/jquery-cookie/jquery.cookie",
         echarts:"assets/echarts/echarts.min",
         tempalte:"assets/artTemplate/template",
-        nprogress:"assets/nprogress"
+        nprogress:"assets/nprogress/nprogress"
     },
     //注意垫片问题
     shim:{

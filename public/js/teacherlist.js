@@ -1,4 +1,4 @@
-define(["jquery","tempalte","bootstrap"],function ($,template) {
+define(["jquery","tempalte","bootstrap","js/overlay"],function ($,template) {
     //页面加载后就发送ajax，请求
     $.ajax({
         url:"/api/teacher",
