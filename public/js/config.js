@@ -6,11 +6,24 @@ require.config({
         cookie:"assets/jquery-cookie/jquery.cookie",
         echarts:"assets/echarts/echarts.min",
         tempalte:"assets/artTemplate/template",
-        nprogress:"assets/nprogress/nprogress"
+        nprogress:"assets/nprogress/nprogress",
+        //datepicker是模块化的
+        datepicker:"assets/bootstrap-datepicker/js/bootstrap-datepicker",
+        language:"assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
+        //validate非模块化
+        validate:"assets/validate/jquery-validate",
+        formsend:"assets/jquery-form/jquery.form"
     },
     //注意垫片问题
     shim:{
         bootstrap:{
+            deps:["jquery"]
+        },
+        //语言需要两个垫片
+        language:{
+            deps:["jquery","datepicker"]
+        },
+        validate:{
             deps:["jquery"]
         }
     }
