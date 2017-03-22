@@ -12,7 +12,13 @@ require.config({
         language:"assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
         //validate非模块化
         validate:"assets/validate/jquery-validate",
-        formsend:"assets/jquery-form/jquery.form"
+        formsend:"assets/jquery-form/jquery.form",
+        //图片上传
+        uploadify:"assets/uploadify/jquery.uploadify",
+        //地区
+        region:"assets/jquery-region/jquery.region",
+        //富文本编辑
+        ckeditor:"assets/ckeditor/ckeditor"
     },
     //注意垫片问题
     shim:{
@@ -25,6 +31,15 @@ require.config({
         },
         validate:{
             deps:["jquery"]
+        },
+        uploadify:{
+            //作为jquery插件，但是本身不需要到处任何模块变量的木块
+            deps:["jquery"]
+        },
+        ckeditor:{
+            deps:["jquery"],
+            //依赖于jquery，同时需要导出模块变量
+            exports : 'CKEDITOR',
         }
     }
 });
