@@ -3,11 +3,14 @@
  */
 define(["jquery"],function ($) {
     var util={};
-    util.asideCss=function () {
-        //获取地址栏的路径
-        var pathname=location.pathname;
+    util.asideCss=function (pathname) {
+        //传入地址，如果没有样式，就获取样式
+        if (!pathname) {
+            pathname=location.pathname;
+        }
         //使用jquery中属性选择器，选择元素，添加样式
-        $(".navs a[href='"+pathname+"']").addClass("active");
+        $(".navs a[href='"+pathname+"']").addClass("active")
+            .closest("ul").show();
     }
     util.sq=function (key) {
         var search=location.search;

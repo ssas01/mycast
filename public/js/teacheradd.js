@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/3/21.
  */
-define(["jquery","tempalte","js/util","bootstrap","datepicker","language","validate","formsend"],function ($,template,util) {
+define(["jquery","template","js/util","bootstrap","datepicker","language","validate","formsend"],function ($,template,util) {
     /*
     * js逻辑分析
     * 修改老师，有id，添加老师没有

@@ -3,11 +3,9 @@ define(["jquery","nprogress"],function ($,nprogress) {
     //遮罩层功能
     $(document).ajaxStart(function () {
         $(".overlay").show();
-        console.log("start");
     });
     $(document).ajaxStop(function () {
         $(".overlay").hide();
-        console.log("end");
     });
     //进度条功能
     nprogress.start();

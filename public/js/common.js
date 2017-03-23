@@ -1,8 +1,7 @@
-define(["jquery","echarts","cookie"],function ($,echarts) {
+define(["jquery","js/util","cookie"],function ($,util) {
+	//选中样式
+	util.asideCss();
 	//实现状态栏左边的效果
-	require(["js/util"],function (util) {
-		util.asideCss();
-	});
 	$('.navs ul').prev('a').on('click', function () {
 		$(this).next().slideToggle();
 	});

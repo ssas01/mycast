@@ -5,7 +5,7 @@ require.config({
         bootstrap:"assets/bootstrap/js/bootstrap",
         cookie:"assets/jquery-cookie/jquery.cookie",
         echarts:"assets/echarts/echarts.min",
-        tempalte:"assets/artTemplate/template",
+        template:"assets/artTemplate/template",
         nprogress:"assets/nprogress/nprogress",
         //datepicker是模块化的
         datepicker:"assets/bootstrap-datepicker/js/bootstrap-datepicker",

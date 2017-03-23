@@ -3,7 +3,7 @@
  */
 //个人中心模块
 //jquery,
-define(["jquery","tempalte","ckeditor","region","datepicker","language","uploadify","validate","formsend"],function ($,template,CKEDITOR) {
+define(["jquery","template","ckeditor","region","datepicker","language","uploadify","validate","formsend"],function ($,template,CKEDITOR) {
     //当点击个人中心的时候，发送ajax请求
     $.ajax({
         url:"/api/teacher/profile",
